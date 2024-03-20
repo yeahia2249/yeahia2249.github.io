@@ -1,1 +1,24 @@
-Hello World
+<!DOCTYPE html>
+<html>
+
+<body>
+  <form id="form" method="POST" role="form" action="https://sandbox.thecitybank.com:4333">
+    <input 
+      type="hidden" 
+      name="creq" 
+      value="eyJhY3NUcmFuc0lEIjoiMTViYjU0YWUtYWQ5Mi00MGI5LWJkYjEtOWUzODEyYmU4Y2NmIiwidGhyZWVEU1NlcnZlclRyYW5zSUQiOiIxNmJmMDE5OC1kODE4LTQyZGItODczYi02NTVhMjkwMTBhMzciLCJjaGFsbGVuZ2VXaW5kb3dTaXplIjoiMDUiLCJtZXNzYWdlVHlwZSI6IkNSZXEiLCJtZXNzYWdlVmVyc2lvbiI6IjIuMS4wIn0"
+    />
+  </form>
+  
+  <script type="text/javascript">
+    window.onload = () => {
+      const stepUpForm = document.querySelector('#form');
+
+      if (stepUpForm) {
+        stepUpForm.submit();
+      }
+    }
+  </script>
+</body>
+
+</html>
