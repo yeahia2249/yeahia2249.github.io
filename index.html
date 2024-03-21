@@ -1,25 +1,32 @@
 <!DOCTYPE html>
 <html>
-
 <body>
-  <form id="form" method="POST" role="form" action="https://sandbox.thecitybank.com:4333">
-    <input 
+<div>
+  <div style="display: flex; align-items: center; justify-content: center; height: 100vh;">
+      <img src="https://s3.ap-southeast-1.amazonaws.com/com.bkash.customerapp.sit/images/public/loader.gif" style="width: 40vw" alt="bKash Bird Animation" />
+  </div>
+  <main>
+    <form id="step-up-form" method="POST" role="form">
+    <input
+      id='access_token'
       type="hidden" 
       name="creq" 
-      value="eyJhY3NUcmFuc0lEIjoiMTViYjU0YWUtYWQ5Mi00MGI5LWJkYjEtOWUzODEyYmU4Y2NmIiwidGhyZWVEU1NlcnZlclRyYW5zSUQiOiIxNmJmMDE5OC1kODE4LTQyZGItODczYi02NTVhMjkwMTBhMzciLCJjaGFsbGVuZ2VXaW5kb3dTaXplIjoiMDUiLCJtZXNzYWdlVHlwZSI6IkNSZXEiLCJtZXNzYWdlVmVyc2lvbiI6IjIuMS4wIn0"
     />
-  </form>
+    </form>
+  </main>
+</div>
   
-  <script type="text/javascript">
-    window.onload = () => {
-      const stepUpForm = document.querySelector('#form');
-
-      if (stepUpForm) {
-        stepUpForm.submit();
-      }
-    }
-  </script>
+  
+<script type="text/javascript">
+  window.addEventListener("flutterInAppWebViewPlatformReady", function (event) {
+    window.flutter_inappwebview.callHandler('getSetupIframeUrl')
+          .then(function (result) {
+            document.getElementById('step-up-form').action = result['stepUpUrl'];
+            document.getElementById('access_token').value = result['accessToken'];
+            document.getElementById('step-up-form').submit();
+          });
+  });
+</script>
 </body>
 
 </html>
-<h1>Hello World</h1>
