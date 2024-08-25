@@ -70,6 +70,7 @@
     const language = navigator.language || navigator.userLanguage
     const timeZone = getTimeZoneNumber()
     const threeDSecureChallengeWindowSize = 'FULL_SCREEN'
+    const javaEnabled = true
 
     return {
       browser,
@@ -78,7 +79,8 @@
       screenWidth,
       language,
       timeZone,
-      threeDSecureChallengeWindowSize
+      threeDSecureChallengeWindowSize,
+      javaEnabled
     }
   }
 
