@@ -33,8 +33,8 @@
   window.addEventListener("flutterInAppWebViewPlatformReady", function (event) {
     window.flutter_inappwebview.callHandler('getSetupIframeUrl')
             .then(function (result) {
-              document.getElementById('step-up-form').action = result['stepUpUrl'];
-              document.getElementById('access_token').value = result['accessToken'];
+              document.getElementById('step-up-form').action = 'https://mtf.gateway.mastercard.com/acs/mastercard/v2/prompt';
+              document.getElementById('access_token').value = 'eyJ0aHJlZURTU2VydmVyVHJhbnNJRCI6IjFkZGQyZjY1LTliMzQtNGFiOS1hODdkLTRjYzMyYzY3NDY2MyJ9';
               stepUpIframeUrl = result['stepUpIframeUrl'];
               document.getElementById('step-up-form').submit();
             });
