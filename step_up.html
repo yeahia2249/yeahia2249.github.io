@@ -44,7 +44,7 @@
             'message',
             function (event) {
               if(event.data['status'] === 'done') {
-                window.flutter_inappwebview.callHandler('transactionSuccess', event.data['transactionId'])
+                window.flutter_inappwebview.callHandler('transactionSuccess', event.data)
                         .then(function (result) {});
               }
             },
